@@ -1,3 +1,4 @@
+/* Root Variables */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -6,16 +7,11 @@
     --white: #ffffff;
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-img{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
 }
 
 body {
@@ -25,18 +21,20 @@ body {
     background-color: var(--light-bg);
 }
 
+/* Navbar */
 .navbar {
     background-color: var(--primary-color);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    padding: 1rem 0;
 }
 
 .nav-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,29 +62,19 @@ body {
     color: var(--secondary-color);
 }
 
-.college-link {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.college-link:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
+/* Section Styling */
 .section {
     padding: 6rem 1rem;
+    margin-top: 50px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 h2 {
-    margin-top: 70px;
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 2rem;
@@ -98,21 +86,14 @@ h2 {
     display: flex;
     gap: 2rem;
     align-items: center;
+    text-align: center;
 }
 
-.profile-img {
-    width: 250px;
-    height: 250px;
+.profile-img img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     border-radius: 50%;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
 }
 
 /* Education Section */
@@ -128,27 +109,11 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.education-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.institution {
-    color: var(--secondary-color);
-    font-weight: 500;
-}
-
-.year {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-}
-
 /* Skills Section */
 .skills-grid {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .skill-category {
@@ -156,28 +121,6 @@ h2 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.skill-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.skill-category ul {
-    list-style: none;
-}
-
-.skill-category li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.skill-category li::before {
-    content: "•";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
 }
 
 /* Contact Section */
@@ -188,23 +131,7 @@ h2 {
     text-align: center;
 }
 
-.contact-item {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease-in-out;
-}
-
-.contact-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.contact-item:hover {
-    transform: scale(1.05);
-}
-
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -218,12 +145,14 @@ footer {
     .nav-content {
         flex-direction: column;
         gap: 1rem;
+        text-align: center;
     }
 
     .nav-links {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        padding: 10px 0;
     }
 
     .about-content {
@@ -231,9 +160,12 @@ footer {
         text-align: center;
     }
 
-    .profile-img {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
+    .skills-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
     }
 }
